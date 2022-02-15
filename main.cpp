@@ -12,7 +12,7 @@ InterruptIn mypin(BUTTON1);
 // Initialise the digital pin LED1 as an output
 DigitalOut led(LED1);
 
-void button_isr(void) { led = mypin; }
+void button_isr(void) { led = mypin; } 
 
 int main() {
     mypin.rise(&button_isr);

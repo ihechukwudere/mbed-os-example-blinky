@@ -10,13 +10,16 @@
 #define BLINKING_RATE     500ms
 
 
+DigitalIn mypin(BUTTON1);
+
 int main()
 {
     // Initialise the digital pin LED1 as an output
     DigitalOut led(LED1);
-
+    
     while (true) {
-        led = !led;
+        led = mypin;
+         printf("mypin has value : %d \n\r", !led.read());
         ThisThread::sleep_for(BLINKING_RATE);
     }
 }
